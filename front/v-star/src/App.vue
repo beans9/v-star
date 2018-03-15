@@ -23,4 +23,14 @@ body, html {
   margin: 0;
   padding: 0;
 }
+
+body, button, input, textarea {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: inherit;
+}
 </style>

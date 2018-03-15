@@ -1,38 +1,74 @@
 <template>
   <div class="main">
-    <header>인스타그램 검색 메뉴</header>
+    <header>
+      <div class="wrapper">
+          <div class="header-left">
+            <a href="" class="header-left-logo-a"><div class="header-left-logo"></div></a>
+          </div>
+          <div class="header-center">
+            <div class="header-center-search-layout">
+              <div class="header-center-search-icon"></div>
+              <span>검색</span>
+            </div>
+          </div>
+          <div class="header-right">
+            <a href="" class="header-right-a"><div class="header-right-menu1"></div></a>
+            <a href="" class="header-right-a"><div class="header-right-menu2"></div></a>
+            <a href="" class="header-right-a"><div class="header-right-menu3"></div></a>
+          </div>
+      </div>
+    </header>
     <div class="profile">
-      프로필
+      <div class="profile-image">
+        <img src="~@/assets/aa.png" class="profile-image-logo" />
+      </div>
+
+      <section class="profile-desc">
+        <div class="prifile-desc-title">
+          <h1>abcd</h1>
+          <span class="auth-badge">인증됨</span>
+          <span class="button-layout">
+            <button class="button blue long">팔로우</button>
+            <button class="button blue"><div class="btn-down-arrow"></div></button>
+            <button class="button transparent"><div class="btn-more"></div></button>
+          </span>
+        </div>
+        <ul class="profile-desc-ul">
+          <li>
+            <span>게시물
+              <span class="strong">178</span>
+            </span>
+          </li>
+          <li>
+            <span>팔로워
+              <span class="strong">178</span>
+            </span>
+          </li>
+          <li>
+            <span>팔로워
+              <span class="strong">178</span>
+            </span>
+          </li>
+        </ul>
+        <div class="profile-desc-detail">
+          <h1>abcd</h1>
+          <span>The official Instagram for ABCd 🙅🏽🦄🤗 Your source for digital original series ft. up-and-coming talent and established voices. Tap that app
+abc.tv/2hzE3IU</span>
+        </div>
+      </section>
     </div>
     <div class="list">
-      <ul>
-        <li>
+      <ul class="list-ul">
+        <li v-for="item in list">
           <div class="content">
-            1
-          </div>
-        </li>
-        <li>
-          <div class="content">
-            1
-          </div>
-        </li>
-        <li>
-          <div class="content">
-            1
-          </div>
-        </li>
-        <li>
-          <div class="content">
-            1
-          </div>
-        </li>
-        <li>
-          <div class="content">
-            1
+            <img src="~@/assets/qqq.png" />
           </div>
         </li>
       </ul>
     </div>
+    <footer>
+      Footer
+    </footer>
   </div>
 </template>
 
@@ -41,7 +77,8 @@ export default {
   name: 'Main',
   data () {
     return {
-      msg: 'Main Page'
+      msg: 'Main Page',
+      list: [1, 2, 3, 4, 5, 6, 7, 8]
     }
   }
 }
@@ -49,40 +86,262 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.main {
+  background-color: #fafafa;
+}
+
 h1, h2 {
   font-weight: normal;
+  margin: 0;
 }
 
 header {
+  background-color: white;
+  height: 77px;
+  line-height: 77px;
+  border-bottom: 1px solid rgba(0,0,0,.0975);
+}
+
+.header-left,.header-right,.header-center {
+  display:inline-block;
+}
+
+.header-left {
+  float:left;
+}
+.header-left-logo-a {
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.header-left-logo {
+  background-image: url('../assets/instargram.png');
+  background-repeat: no-repeat;
+  background-position: -177px -264px;
+  height: 35px;
+  width: 176px;
+  vertical-align:middle;
+}
+
+.header-right {
+  float:right;
+}
+
+.header-right-a {
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.header-right-a + .header-right-a {
+  margin-left: 25px;
+}
+
+.header-right-menu1 {
+  background-image: url('../assets/instargram.png');
+  background-repeat: no-repeat;
+  background-position: -335px -399px;
+  height: 24px;
+  width: 24px;
+}
+
+.header-right-menu2 {
+  background-image: url('../assets/instargram.png');
+  background-repeat: no-repeat;
+  background-position: -257px -399px;
+  height: 24px;
+  width: 24px;
+}
+
+.header-right-menu3 {
+  background-image: url('../assets/instargram.png');
+  background-repeat: no-repeat;
+  background-position: -182px -479px;
+  height: 24px;
+  width: 24px;
+}
+
+.header-center-search-layout {
+  border: solid 1px #dbdbdb;
+  border-radius: 3px;
+  color: #999;
+  font-size: 14px;
+  outline: 0;
+  padding: 3px 10px 3px 10px;
+  z-index: 2;
+  width:215px;
+  height:28px;
+  line-height:22px;
+  box-sizing: border-box;
+  displaY:inline-block;
+  vertical-align: middle;
+  background-color: #fafafa;
+}
+
+.header-center-search-icon {
+  background-image: url('../assets/instargram.png');
+  background-repeat: no-repeat;
+  background-position: -429px -385px;
+  height: 10px;
+  width: 10px;
+  display:inline-block;
+}
+
+
+.wrapper {
+  width: 953px;
+  margin: 0 auto;
+}
+
+footer {
+  width: 953px;
+  margin: 0 auto;
   background-color: green;
 }
 
 .profile {
-  background-color: red;
+  width: 953px;
+  margin: 0 auto;
+  /* background-color: red; */
+  margin-top:30px;
+}
+
+.profile-image {
+  display:inline-block;
+  width:30%;
+  text-align: center;
+  /* border:1px solid blue; */
+  vertical-align: top;
+}
+
+.profile-image-logo {
+  width:152px;
+  height:152px;
+  border-radius: 75px;
+}
+
+.profile-desc {
+  width:65%;
+  text-align: left;
+  display:inline-block;
+}
+
+.prifile-desc-title h1 {
+  display:inline-block;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 200;
+}
+
+.profile-desc-detail {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.profile-desc-detail h1 {
+  font-size: 16px;
+  font-weight: bold;
+  display:inline-block;
+}
+
+.button-layout {
+  vertical-align: super;
+}
+
+.button {
+  border-color:#dbdbdb;
+  border-radius: 3px;
+  color:white;
+  padding: 0 10px;
+  font-size:14px;
+  height:28px;
+  display:inline-block;
+  margin-left:5px;
+  vertical-align: bottom;
+  margin-bottom:5px;
+  cursor: pointer;
+}
+
+.blue {
+  background-color:#3897f0;
+  border-color:#3897f0;
+}
+
+.button.long {
+  padding: 0 20px;
+}
+
+.button.transparent {
+  border-color: transparent !important;
+  padding: 0;
+}
+
+.auth-badge {
+  background-image: url('../assets/instargram.png');
+  background-repeat: no-repeat;
+  background-position: -546px -179px;
+  height: 18px;
+  width: 18px;
+  display: block;
+  overflow: hidden;
+  text-indent: 110%;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.btn-down-arrow {
+  background-image: url('../assets/instargram.png');
+  background-repeat: no-repeat;
+  background-position: -453px -385px;
+  width: 9px;
+  height: 6px;
+}
+
+.btn-more {
+  background-image: url('../assets/instargram.png');
+  background-repeat: no-repeat;
+  background-position: -546px -336px;
+  height: 16px;
+  width: 16px;
+}
+
+.profile-desc {
+  height: auto;
+}
+
+.profile-desc-ul {
+  padding-left: 0px;
+}
+
+.profile-desc-ul li {
+  list-style: none;
+  display:inline-block;
+  width:20%;
+  text-align: left;
 }
 
 .list {
-  background-color: blue;
+  /* background-color: blue; */
   width: 953px;
   margin:0 auto;
+  padding-top:40px;
 }
 
-ul {
+.list-ul {
   padding: 0;
   margin: 0;
   text-align: left;
   font-size:0;
 }
 
-li {
+.list-ul li {
   font-size:1rem;
-  background-color: yellow;
+  /* background-color: yellow; */
   list-style:none;
   display:inline-block;
   width:33.3%;
   text-align:center;
-  margin-top:20px;
-  border:1px solid red;
+  margin-top:9px;
+  /* border:1px solid red; */
   box-sizing: border-box;
   padding:5px;
 }
@@ -94,8 +353,16 @@ li:nth-child(3n) {
 .content {
   width:100%;
   height:100%;
-  background-color:purple;
   font-size:1rem;
   color:white;
+}
+
+.content img {
+  width: 293px;
+  height: 293px;
+}
+
+.strong {
+  font-weight: bold;
 }
 </style>
