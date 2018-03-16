@@ -1,74 +1,86 @@
 <template>
   <div class="main">
-    <header>
-      <div class="wrapper">
-          <div class="header-left">
-            <a href="" class="header-left-logo-a"><div class="header-left-logo"></div></a>
-          </div>
-          <div class="header-center">
-            <div class="header-center-search-layout">
-              <div class="header-center-search-icon"></div>
-              <span>검색</span>
+    <main>
+      <header>
+        <div class="wrapper">
+            <div class="header-left">
+              <a href="" class="header-left-logo-a"><div class="header-left-logo"></div></a>
             </div>
-          </div>
-          <div class="header-right">
-            <a href="" class="header-right-a"><div class="header-right-menu1"></div></a>
-            <a href="" class="header-right-a"><div class="header-right-menu2"></div></a>
-            <a href="" class="header-right-a"><div class="header-right-menu3"></div></a>
-          </div>
-      </div>
-    </header>
-    <div class="profile">
-      <div class="profile-image">
-        <img src="~@/assets/aa.png" class="profile-image-logo" />
-      </div>
-
-      <section class="profile-desc">
-        <div class="prifile-desc-title">
-          <h1>abcd</h1>
-          <span class="auth-badge">인증됨</span>
-          <span class="button-layout">
-            <button class="button blue long">팔로우</button>
-            <button class="button blue"><div class="btn-down-arrow"></div></button>
-            <button class="button transparent"><div class="btn-more"></div></button>
-          </span>
+            <div class="header-center">
+              <div class="header-center-search-layout">
+                <div class="header-center-search-icon"></div>
+                <span>검색</span>
+              </div>
+            </div>
+            <div class="header-right">
+              <a href="" class="header-right-a"><div class="header-right-menu1"></div></a>
+              <a href="" class="header-right-a"><div class="header-right-menu2"></div></a>
+              <a href="" class="header-right-a"><div class="header-right-menu3"></div></a>
+            </div>
         </div>
-        <ul class="profile-desc-ul">
-          <li>
-            <span>게시물
-              <span class="strong">178</span>
+      </header>
+      <div class="profile">
+        <div class="profile-image">
+          <img src="~@/assets/aa.png" class="profile-image-logo" />
+        </div>
+
+        <section class="profile-desc">
+          <div class="prifile-desc-title">
+            <h1>abcd</h1>
+            <span class="auth-badge">인증됨</span>
+            <span class="button-layout">
+              <button class="button blue long">팔로우</button>
+              <button class="button blue"><div class="btn-down-arrow"></div></button>
+              <button class="button transparent"><div class="btn-more"></div></button>
             </span>
-          </li>
-          <li>
-            <span>팔로워
-              <span class="strong">178</span>
-            </span>
-          </li>
-          <li>
-            <span>팔로워
-              <span class="strong">178</span>
-            </span>
+          </div>
+          <ul class="profile-desc-ul">
+            <li>
+              <span>게시물
+                <span class="strong">178</span>
+              </span>
+            </li>
+            <li>
+              <span>팔로워
+                <span class="strong">178</span>
+              </span>
+            </li>
+            <li>
+              <span>팔로워
+                <span class="strong">178</span>
+              </span>
+            </li>
+          </ul>
+          <div class="profile-desc-detail">
+            <h1>abcd</h1>
+            <span>The official Instagram for ABCd 🙅🏽🦄🤗 Your source for digital original series ft. up-and-coming talent and established voices. Tap that app
+  abc.tv/2hzE3IU</span>
+          </div>
+        </section>
+      </div>
+      <div class="list">
+        <ul class="list-ul">
+          <li v-for="(item,index) in list" v-bind:key="index">
+            <div class="content">
+              <img src="~@/assets/qqq.png" />
+              {{item}}
+            </div>
           </li>
         </ul>
-        <div class="profile-desc-detail">
-          <h1>abcd</h1>
-          <span>The official Instagram for ABCd 🙅🏽🦄🤗 Your source for digital original series ft. up-and-coming talent and established voices. Tap that app
-abc.tv/2hzE3IU</span>
-        </div>
-      </section>
-    </div>
-    <div class="list">
-      <ul class="list-ul">
-        <li v-for="(item,index) in list" v-bind:key="index">
-          <div class="content">
-            <img src="~@/assets/qqq.png" />
-            {{item}}
-          </div>
-        </li>
-      </ul>
-    </div>
+      </div>
+    </main>
     <footer>
-      Footer
+      <ul class="footer-ul">
+        <li><a href="">소개</a></li>
+        <li><a href="">지원</a></li>
+        <li><a href="">블로그</a></li>
+        <li><a href="">홍보센터</a></li>
+        <li><a href="">API</a></li>
+        <li><a href="">채용정보</a></li>
+        <li><a href="">개인정보보호</a></li>
+        <li><a href="">약관</a></li>
+      </ul>
+      <p>© 2018 Instagram</p>
     </footer>
   </div>
 </template>
@@ -87,8 +99,21 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.main {
+body {
   background-color: #fafafa;
+}
+
+.main {
+  height:100vh;
+  min-height:500px;
+  display:flex;
+  flex-direction: column;
+}
+
+main {
+  display:flex;
+  flex:1 0 auto;
+  flex-direction:column;
 }
 
 h1, h2 {
@@ -190,12 +215,6 @@ header {
 .wrapper {
   width: 953px;
   margin: 0 auto;
-}
-
-footer {
-  width: 953px;
-  margin: 0 auto;
-  background-color: green;
 }
 
 .profile {
@@ -360,6 +379,40 @@ li:nth-child(3n) {
 .content img {
   width: 293px;
   height: 293px;
+}
+
+footer {
+  height:50px;
+  width: 953px;
+  margin: 0 auto;
+  /* background-color: green; */
+  text-align: left;
+  font-size:12px;
+  padding: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  margin-bottom:30px;
+}
+
+.footer-ul {
+  display:inline-block;
+  padding-left: 0;
+}
+
+.footer-ul li {
+  display:inline-block;
+  list-style: none;
+  margin-right: 15px;
+}
+
+.footer-ul li a {
+  text-decoration: none;
+  color: #003569;
+}
+
+footer p {
+  float:right;
 }
 
 .strong {
