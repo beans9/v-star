@@ -59,9 +59,10 @@ abc.tv/2hzE3IU</span>
     </div>
     <div class="list">
       <ul class="list-ul">
-        <li v-for="item in list">
+        <li v-for="(item,index) in list" v-bind:key="index">
           <div class="content">
             <img src="~@/assets/qqq.png" />
+            {{item}}
           </div>
         </li>
       </ul>
@@ -78,7 +79,7 @@ export default {
   data () {
     return {
       msg: 'Main Page',
-      list: [1, 2, 3, 4, 5, 6, 7, 8]
+      list: [1, 2, 3, 4, 5]
     }
   }
 }
@@ -185,7 +186,6 @@ header {
   width: 10px;
   display:inline-block;
 }
-
 
 .wrapper {
   width: 953px;
